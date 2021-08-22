@@ -145,7 +145,7 @@ First, make sure you have the latest versions of Go and GCC installed. If you op
 
 Also recommended is to install an SQLite3 database interface, like [SQLiteStudio](https://sqlitestudio.pl/).
 
-With at least Go and GCC installed, simply enter `go get github.com/zephyrtronium/robot/...`. This installs the `robot`, `robot-convert`, `robot-init`, and `robot-talk` commands. At this point, you should be able to enter `robot -help` to see a basic help message.
+With at least Go and GCC installed, simply enter `go get github.com/AbsyntheSyne/robot/...`. This installs the `robot`, `robot-convert`, `robot-init`, and `robot-talk` commands. At this point, you should be able to enter `robot -help` to see a basic help message.
 
 Before you can run Robot, you'll need to use `robot-init` to initialize a database. You'll probably want to copy and modify [the example configuration](cmd/robot-init/example.json), then do `robot-init -conf modified.json -source robot.sqlite3`. See [the README for `robot-init`](cmd/robot-init/README.md) for more information.
 
