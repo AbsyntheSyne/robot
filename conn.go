@@ -26,7 +26,7 @@ import (
 	"net"
 	"time"
 
-	"github.com/zephyrtronium/robot/irc"
+	"github.com/AbsyntheSyne/robot/irc"
 )
 
 // contextDialer is typically either *net.Dialer or *tls.Dialer.
