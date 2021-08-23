@@ -1,4 +1,4 @@
-module github.com/zephyrtronium/robot
+module github.com/AbsyntheSyne/robot
 
 go 1.13
 
