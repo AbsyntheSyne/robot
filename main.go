@@ -36,10 +36,10 @@ import (
 
 	"golang.org/x/time/rate"
 
-	"github.com/zephyrtronium/robot/brain"
-	"github.com/zephyrtronium/robot/commands"
-	"github.com/zephyrtronium/robot/dash"
-	"github.com/zephyrtronium/robot/irc"
+	"github.com/AbsyntheSyne/robot/brain"
+	"github.com/AbsyntheSyne/robot/commands"
+	"github.com/AbsyntheSyne/robot/dash"
+	"github.com/AbsyntheSyne/robot/irc"
 )
 
 const copying = `
