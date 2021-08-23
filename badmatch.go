@@ -18,7 +18,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 package main
 
 import (
-	"github.com/zephyrtronium/robot/irc"
+	"github.com/AbsyntheSyne/robot/irc"
 )
 
 // badmatch filters PRIVMSG messages that contain bad words.
