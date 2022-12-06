@@ -169,6 +169,17 @@ func loop(ctx context.Context, wg *sync.WaitGroup, br *brain.Brain, send, recv c
 					}
 				}(msg)
 			case "CLEARMSG":
+				user, _ := msg.Tag("login")
+				if strings.EqualFold(user, br.Name()) {
+					// The deleted message was sent by the bot. Forget it.
+					err := br.ClearText(ctx, msg.To(), msg.Trailing)
+					if err != nil {
+						lg.Println("error clearing chat:", err)
+					} else {
+						lg.Println("forgot how to say that")
+					}
+					break
+				}
 				id, ok := msg.Tag("target-msg-id")
 				if !ok {
 					lg.Println("??? CLEARMSG with no target-msg-id")
@@ -259,7 +270,13 @@ func privmsg(ctx context.Context, br *brain.Brain, send chan<- irc.Message, msg 
 			lg.Println("won't copypasta:", err)
 			return nil
 		}
-		send <- msg.Reply("%s", msg.Trailing)
+		eff := br.EffectIn(ctx, msg.To())
+		cp := msg.Trailing
+		if eff != "" {
+			lg.Println("applying", eff, "to", msg.Trailing)
+			cp = commands.Effect(eff, msg.Trailing)
+		}
+		send <- msg.Reply("%s", cp)
 		if err := br.AddAffection(ctx, msg.To(), uid, 20); err != nil {
 			lg.Println("couldn't add copypasta affection:", err)
 		}

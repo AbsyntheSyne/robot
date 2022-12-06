@@ -452,6 +452,20 @@ func init() {
 			f:    affection,
 			help: `["how much do you like me"] Check your score in ranked competitive marriage.`,
 		},
+		{
+			admin: true, regular: true,
+			name: "chuu",
+			re:   regexp.MustCompile(`(?i)^[¿¡]*(?:\*+|(?:i|do\s+y?o?u)?\s*wan(?:t\s+(?:tw?oo?|2)|n?a)?)?\s*(?:kiss|smooch|chuu|smoots|hug|snugg?le?|cudd?le?)e?s?\s*(?:\*+|y?o?u|me)?\s*[.?!¿¡]*$`),
+			f:    chuu,
+			help: `["*smooch*"] *smooch*`,
+		},
+		{
+			admin: true, regular: true,
+			name: "self",
+			re:   regexp.MustCompile(`(?i)^[¿¡]*\s*(?:who\s+a?re?\s+y?o?u|how\s+do\s+y?o?u\s+w[oe]?rk)\s*[?!¿¡]*`),
+			f:    self,
+			help: `["who are you"] Describe self.`,
+		},
 		// talk-catchall MUST be last
 		{
 			admin: true, regular: true,
